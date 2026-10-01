@@ -1,0 +1,10 @@
+{
+    "name": "Flashcard Quiz App",
+    "short_name": "Flashcards",
+    "description": "A simple flashcard quiz app for studying and revision.",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#f4f7fb",
+    "theme_color": "#4f46e5",
+    "orientation": "portrait"
+}

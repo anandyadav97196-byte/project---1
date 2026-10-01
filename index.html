@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Flashcard Quiz App</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="manifest" href="manifest.json">
+
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <h1>📚 Flashcard Quiz App</h1>
+
+        <p>Study smarter with simple flashcards</p>
+
+    </header>
+
+
+    <!-- ================= MAIN CONTAINER ================= -->
+
+    <main class="container">
+
+
+        <!-- ================= FLASHCARD SECTION ================= -->
+
+        <section class="flashcard-section">
+
+            <h2>Study Flashcards</h2>
+
+            <!-- Card Counter -->
+            <div class="card-counter">
+                Card <span id="cardNumber">1</span>
+                of
+                <span id="totalCards">3</span>
+            </div>
+
+
+            <!-- Flashcard -->
+
+            <div class="flashcard" id="flashcard">
+
+                <!-- Question Side -->
+
+                <div class="card-content">
+
+                    <h3>Question</h3>
+
+                    <p id="question">
+                        What is HTML?
+                    </p>
+
+                </div>
+
+
+                <!-- Answer Side -->
+
+                <div class="answer-content" id="answerSection">
+
+                    <h3>Answer</h3>
+
+                    <p id="answer">
+                        Click "Show Answer" to see the answer.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Show Answer Button -->
+
+            <button
+                id="showAnswerBtn"
+                class="btn show-answer-btn">
+
+                Show Answer
+
+            </button>
+
+
+            <!-- Previous / Next Buttons -->
+
+            <div class="navigation">
+
+                <button
+                    id="previousBtn"
+                    class="btn navigation-btn">
+
+                    ← Previous
+
+                </button>
+
+
+                <button
+                    id="nextBtn"
+                    class="btn navigation-btn">
+
+                    Next →
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= MANAGE FLASHCARDS ================= -->
+
+        <section class="manage-section">
+
+            <h2>Manage Flashcards</h2>
+
+
+            <!-- Add Flashcard Form -->
+
+            <div class="form-container">
+
+                <h3 id="formTitle">
+                    Add New Flashcard
+                </h3>
+
+
+                <!-- Question Input -->
+
+                <div class="form-group">
+
+                    <label for="questionInput">
+                        Question
+                    </label>
+
+                    <textarea
+                        id="questionInput"
+                        placeholder="Enter your question here..."
+                        rows="3"></textarea>
+
+                </div>
+
+
+                <!-- Answer Input -->
+
+                <div class="form-group">
+
+                    <label for="answerInput">
+                        Answer
+                    </label>
+
+                    <textarea
+                        id="answerInput"
+                        placeholder="Enter the answer here..."
+                        rows="3"></textarea>
+
+                </div>
+
+
+                <!-- Form Buttons -->
+
+                <div class="form-buttons">
+
+                    <button
+                        id="saveBtn"
+                        class="btn save-btn">
+
+                        Add Flashcard
+
+                    </button>
+
+
+                    <button
+                        id="cancelBtn"
+                        class="btn cancel-btn">
+
+                        Cancel
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= FLASHCARD LIST ================= -->
+
+            <div class="card-list-container">
+
+                <h3>My Flashcards</h3>
+
+
+                <!-- Cards will be displayed here by JavaScript -->
+
+                <div id="cardList">
+
+                    <!-- Example Card -->
+
+                    <div class="card-item">
+
+                        <div class="card-info">
+
+                            <strong>
+                                What is HTML?
+                            </strong>
+
+                            <p>
+                                HyperText Markup Language
+                            </p>
+
+                        </div>
+
+
+                        <div class="card-actions">
+
+                            <button
+                                class="edit-btn">
+
+                                Edit
+
+                            </button>
+
+
+                            <button
+                                class="delete-btn">
+
+                                Delete
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Example Card -->
+
+                    <div class="card-item">
+
+                        <div class="card-info">
+
+                            <strong>
+                                What is CSS?
+                            </strong>
+
+                            <p>
+                                Cascading Style Sheets
+                            </p>
+
+                        </div>
+
+
+                        <div class="card-actions">
+
+                            <button
+                                class="edit-btn">
+
+                                Edit
+
+                            </button>
+
+
+                            <button
+                                class="delete-btn">
+
+                                Delete
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <p>
+            © 2026 Flashcard Quiz App | Created for Learning
+        </p>
+
+    </footer>
+
+
+
+    <!-- JavaScript File -->
+
+    <script src="script.js"></script>
+
+<script>
+    if ("serviceWorker" in navigator) {
+
+        window.addEventListener("load", function () {
+
+            navigator.serviceWorker
+                .register("./service-worker.js")
+                .then(function () {
+
+                    console.log(
+                        "Service Worker registered successfully."
+                    );
+
+                })
+                .catch(function (error) {
+
+                    console.log(
+                        "Service Worker registration failed:",
+                        error
+                    );
+
+                });
+
+        });
+
+    }
+</script>
+
+</body>
+
+</html>
